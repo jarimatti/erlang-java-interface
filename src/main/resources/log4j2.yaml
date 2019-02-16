@@ -1,0 +1,11 @@
+Configuration:
+  appenders:
+    Console:
+      name: STDOUT
+      PatternLayout:
+        Pattern: "%d %p %m%n"
+  Loggers:
+    Root:
+      level: trace
+      AppenderRef:
+        ref: STDOUT
