@@ -6,15 +6,18 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 
 import java.util.List;
 
-public class EpmdAliveResponseDecoder extends ByteToMessageDecoder {
+/**
+ * Decode an Alive2Resp (ALIVE2_RESP) message from incoming bytes.
+ */
+class AliveResponseDecoder extends ByteToMessageDecoder {
 
-    public final byte ALIVE2_RESP_TAG = 121;
+    private static final byte TAG = 121;
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) {
         final byte tag = in.readByte();
 
-        if (tag != ALIVE2_RESP_TAG) {
+        if (tag != TAG) {
             throw new IllegalArgumentException("ALIVE2_RESP tag was not 121");
         }
         final byte result = in.readByte();

@@ -1,5 +1,8 @@
 package fi.jarimatti.erlangbridge.epmd;
 
+/**
+ * Epmd registration response message.
+ */
 public class Alive2Resp {
 
     private final byte result;
@@ -10,20 +13,37 @@ public class Alive2Resp {
         return String.format("Alive2Resp(%d, %d)", result, creation);
     }
 
-    public Alive2Resp(byte result, int creation) {
+    /**
+     * Construct a new response message.
+     *
+     * @param result The result code.
+     * @param creation Creation number.
+     */
+    Alive2Resp(byte result, int creation) {
         this.result = result;
         this.creation = creation;
     }
 
-    public boolean isSuccess() {
+    /**
+     * A response is successful if the result byte is 0.
+     *
+     * @return True if the response is successful, false otherwise.
+     */
+    boolean isSuccess() {
         return result == 0;
     }
 
-    public byte getResult() {
+    /**
+     * @return The result byte for further analysis.
+     */
+    byte getResult() {
         return result;
     }
 
-    public int getCreation() {
+    /**
+     * @return The creation number.
+     */
+    int getCreation() {
         return creation;
     }
 }
