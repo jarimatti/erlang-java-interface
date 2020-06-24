@@ -34,7 +34,7 @@ class PortPleaseResponseDecoder extends ReplayingDecoder<PortPlease2Response> {
     }
 
     private Node readNode(ByteBuf in) {
-        final Node.Builder builder = Node.Builder.newBuilder()
+        final Node.Builder builder = Node.builder()
                 .port(in.readUnsignedShort())
                 .nodeType(in.readByte())
                 .protocol(in.readByte())

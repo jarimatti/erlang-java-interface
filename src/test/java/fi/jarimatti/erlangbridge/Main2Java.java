@@ -28,7 +28,7 @@ public class Main2Java {
 
             final String name = "testi@DG5";
             final int port = 64000;
-            final Node node = Node.Builder.newBuilder()
+            final Node node = Node.builder()
                     .name(name)
                     .port(port)
                     .hiddenNode()

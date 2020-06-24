@@ -75,6 +75,10 @@ public class Node {
                 name, port, nodeType, protocol, highestVersion, lowestVersion);
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public static class Builder {
 
         private String name;
@@ -84,10 +88,6 @@ public class Node {
         private int highestVersion = 5;
         private int lowestVersion = 5;
         private byte[] extra = new byte[]{};
-
-        public static Builder newBuilder() {
-            return new Builder();
-        }
 
         public Node build() {
             return new Node(this);

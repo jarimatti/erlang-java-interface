@@ -48,7 +48,7 @@ public class AliveHandler extends SimpleChannelInboundHandler<Alive2Resp> {
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-        LOGGER.warn("Unhandled exception, closing channel: {}", cause);
+        LOGGER.warn("Unhandled exception, closing channel: {}", cause.getMessage(), cause);
         alivePromise.setFailure(cause);
         ctx.close();
     }
