@@ -34,14 +34,14 @@ public class Node {
     /**
      * @return The node name.
      */
-    String getName() {
+    public String getName() {
         return name;
     }
 
     /**
      * @return The node port.
      */
-    int getPort() {
+    public int getPort() {
         return port;
     }
 
@@ -49,24 +49,24 @@ public class Node {
      *
      * @return The node type. Either HIDDEN_NODE or ERLANG_NODE.
      */
-    byte getNodeType() {
+    public byte getNodeType() {
         return nodeType;
     }
 
-    byte getProtocol() {
+    public byte getProtocol() {
         return protocol;
     }
 
-    int getHighestVersion() {
+    public int getHighestVersion() {
         return highestVersion;
     }
 
-    int getLowestVersion() {
+    public int getLowestVersion() {
         return lowestVersion;
     }
 
-    byte[] getExtra() {
-        return extra;
+    public byte[] getExtra() {
+        return Arrays.copyOf(extra, extra.length);
     }
 
     @Override
