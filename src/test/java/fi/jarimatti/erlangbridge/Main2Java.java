@@ -101,7 +101,7 @@ public class Main2Java {
             //
             f3.channel().closeFuture().sync();
             f2.channel().closeFuture().sync();
-            f.channel().closeFuture().sync();
+            f.channel().close().sync();
         } finally {
             workerGroup.shutdownGracefully();
         }
